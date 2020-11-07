@@ -1,16 +1,16 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 
 def home_view(request):
-    return HttpResponse('Home page')
+    return render(request, 'home.html')
 
 def services_view(request):
-    return HttpResponse('services page')
+    return render(request, 'services.html')
 
 def about_view(request):
-    return HttpResponse("About page")
+    return render(request, 'about.html')
 
 def contact_view(request):
-    return HttpResponse("Contact page")
+    return render(request, 'contact.html')
 
 
 
