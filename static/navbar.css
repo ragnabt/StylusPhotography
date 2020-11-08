@@ -1,0 +1,13 @@
+
+.navbar{
+    background-color: #4e848a;
+    padding: 10px;
+}
+.navbutton{
+    color: white;
+
+}
+.navbutton:hover{
+    color: #a95c77;
+    background-color: #b7b7b7;
+}

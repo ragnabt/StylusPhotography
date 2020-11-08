@@ -1,3 +1,5 @@
+@import "navbar.css";
+
 body{
     background-color: #222222;
     color: #b7b7b7;
@@ -13,7 +15,21 @@ h1, h2, h3{
 h4{
     font-weight: 300;
 }
+
 h1{
     color: #f94085;
-;
+}
+
+h3{
+    margin: 0px;
+}
+.navbar{
+
+}
+a{
+    color: #a95c77;
+    text-decoration: none;
+}
+a:hover {
+    color: white;
 }
