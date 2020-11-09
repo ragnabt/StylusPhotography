@@ -11,16 +11,10 @@
 {#    <link rel="stylesheet" href="{% static 'navbar.css' %}">#}
 </head>
 <body>
-    <h1 style="margin-bottom: 0">Stylus Photography</h1>
-    <h3>Ha már unod az egyforma képeket</h3>
+    <h1 style="margin-bottom: 0">{{ site_name }}</h1>
+    <h3>{{ site_subtitle }}</h3>
 
-    <div class = "navbar">
-        <a href="/" class="navbutton">HOME</a>
-        <a href="/" class="navbutton">GALLERY</a>
-        <a href="/about" class="navbutton">ABOUT</a>
-        <a href="/services" class="navbutton">SERVICES</a>
-        <a href="/contact" class="navbutton">CONTACT</a>
-    </div>
+    {% include '_navbar.html' %}
 
     {% block content %}
 
