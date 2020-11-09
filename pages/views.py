@@ -17,6 +17,9 @@ def contact_view(request):
     return render(request, 'contact.html')
 
 
+def gallery_view(request):
+    return render(request, 'gallery.html')
+
 
 
 
