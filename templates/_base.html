@@ -5,26 +5,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Stylus Photography | {% block title %}{% endblock title %}</title>
+    <script src="https://kit.fontawesome.com/74f7ef6948.js" crossorigin="anonymous"></script>
+
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'main.css' %}">
 {#    <link rel="stylesheet" href="{% static 'navbar.css' %}">#}
 </head>
 <body>
-    <h1 style="margin-bottom: 0">{{ site_name }}</h1>
-    <img src="/media/{{ logo }}" alt="logo">
-    <h3>{{ site_subtitle }}</h3>
+
+    <div class="site_header_layout">
+        <i class="fas fa-camera site-logo"></i>
+        <div>
+            <h1 style="margin: 0">{{ site_name }}</h1>
+    {#      <img src="/media/{{ logo }}" alt="logo">#}
+            <h3>{{ site_subtitle }}</h3>
+        </div>
+
+    </div>
+
+
+
 
     {% include '_navbar.html' %}
 
+<div class="content_container">
     {% block content %}
 
     {% endblock content %}
+</div>
 
-    <div>
+    <div class="site_footer_layout">
 
-        <p>{{ email }}</p>
-        <p>{{ phone }}</p>
+        <p>Email: {{ email }}</p>
+        <p>Telefon: {{ phone }}</p>
 
     </div>
 

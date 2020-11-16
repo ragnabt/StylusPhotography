@@ -35,3 +35,29 @@ a{
 a:hover {
     color: white;
 }
+
+.site-logo{
+    color: #f94085;
+    font-size: 120px;
+    margin: 10px;
+}
+
+.site_header_layout{
+    display: flex;
+    align-items: center;
+}
+.site_footer_layout{
+    display: flex;
+    justify-content: center;
+    background-color: #b7bbb9;
+    color: #6a6c6b;
+}
+.site_footer_layout p{
+    margin: 10px;
+}
+.content_container{
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
