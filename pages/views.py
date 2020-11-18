@@ -6,6 +6,7 @@ from .models import About, Services, Home
 #         "site_subtitle": "Ha már unod az egyforma képeket..."
 #     }
 
+
 def home_view(request):
     home = Home.objects.all()
     context = {}
@@ -48,9 +49,7 @@ def contact_view(request):
     return render(request, 'contact.html')
 
 
-def gallery_view(request):
 
-    return render(request, 'gallery.html')
 
 
 

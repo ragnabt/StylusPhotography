@@ -1,0 +1,18 @@
+{% extends '_base.html' %}
+
+{% block title %} About {% endblock title %}
+
+{% block content %}
+
+
+    <div>
+        {% for photo in photos %}
+            <div>
+                <img src="{{ photo.image }}" alt="" style="width: 300px; height: 300px">
+            </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock content %}
+
