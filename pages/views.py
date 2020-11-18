@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import About
 
 # context = {
 #         "site_name": "Stylus photography",
@@ -28,14 +29,13 @@ def services_view(request):
 
 
 def about_view(request):
-    # # database request
-    # context = {
-    #     "site_name": site_name,
-    #     "site_subtitle": "Ha már unod az egyforma képeket..."
-    # }
+    abouts = About.objects.all()
+    context = {}
+    if abouts:
+        context["title"] = abouts[0].title
+        context["content"] = abouts[0].content
 
-    # return render(request, 'about.html', context)
-    return render(request, 'about.html')
+    return render(request, 'about.html', context)
 
 
 def contact_view(request):
