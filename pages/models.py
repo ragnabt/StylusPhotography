@@ -63,6 +63,8 @@ class Services(models.Model):
     title = models.CharField('Cím', max_length=200)
     image = models.ImageField('Kép', upload_to='services')
     content = models.TextField('Leírás', max_length=5000)
+    # order = models.IntegerField(default=1)
+    # created = models.DateTimeField(auto_now=True, auto_created=True)
 
     def save(self, *args, **kwargs):
         # if photo is being replaces
@@ -94,6 +96,17 @@ class Services(models.Model):
 
     class Meta:
         verbose_name_plural = "Szolgáltatásaink"                                # admin felületen a PAGES részben lévő adat neve ( lényegében a jelen osztály nevét írjuk így felül megjelenítéskor)
+
+    def __str__(self):
+        return self.title
+
+
+class Home(models.Model):
+    title = models.CharField('Címsor', max_length=200)
+    content = models.TextField('Bemutatkozó', max_length=5000)
+
+    class Meta:
+        verbose_name_plural = "Nyitó oldal"                                # admin felületen a PAGES részben lévő adat neve ( lényegében a jelen osztály nevét írjuk így felül megjelenítéskor)
 
     def __str__(self):
         return self.title
