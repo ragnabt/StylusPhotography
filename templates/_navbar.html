@@ -3,9 +3,9 @@
 
 
     <div class = "navbar">
-        <a href="/" class="navbutton">HOME</a>
-        <a href="gallery" class="navbutton">GALLERY</a>
-        <a href="/about" class="navbutton">ABOUT</a>
-        <a href="/services" class="navbutton">SERVICES</a>
-        <a href="/contact" class="navbutton">CONTACT</a>
+        <a href="{% url 'home' %}" class="navbutton">HOME</a>
+        <a href="{% url 'gallery_home' %}" class="navbutton">GALLERY</a>
+        <a href="{% url 'about' %}" class="navbutton">ABOUT</a>
+        <a href="{% url 'services' %}" class="navbutton">SERVICES</a>
+        <a href="{% url 'contact' %}" class="navbutton">CONTACT</a>
     </div>

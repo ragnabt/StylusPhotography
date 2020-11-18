@@ -24,9 +24,9 @@ def create_photo():
 
 
 def gallery_view(request):
-    photos = [create_photo() for i in range(20)]
-    for i in photos:
-        print(i)
+    photos = [create_photo() for i in range(30)]
+    # for i in photos:
+        # print(i)
 
 
     return render(request, 'gallery/gallery_home.html', {"photos": photos})
