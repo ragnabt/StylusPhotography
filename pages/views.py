@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import About
+from .models import About, Services
 
 # context = {
 #         "site_name": "Stylus photography",
@@ -18,14 +18,11 @@ def home_view(request):
 
 
 def services_view(request):
-    # # database request
-    # context = {
-    #     "site_name": site_name,
-    #     "site_subtitle": "Ha már unod az egyforma képeket..."
-    # }
-
-    # return render(request, 'services.html', context)
-    return render(request, 'services.html')
+    services = Services.objects.all()
+    context = {
+        "services" : services
+    }
+    return render(request, 'services.html', context)
 
 
 def about_view(request):

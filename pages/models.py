@@ -6,7 +6,7 @@ import os
 
 class SiteInfo(models.Model):
     site_name = models.CharField("Oldalnév", max_length=200)                # kötelezően kitöltendő mező
-    logo = models.ImageField("Logo", upload_to="logo", blank=True)    # megadom a kép nevét és a mentés helyét...
+    image = models.ImageField("Logo", upload_to="logo", blank=True)    # megadom a kép nevét és a mentés helyét...
     subtitle = models.CharField("Alcím", max_length=200)                    # kötelezően kitöltendő mező
     email = models.EmailField("Email", max_length=200, blank=True)          # opcionálisan kitöltendő mező
     phone = models.CharField("Telefon", max_length=200, blank=True)         # opcionálisan kitöltendő mező
@@ -23,15 +23,15 @@ class SiteInfo(models.Model):
     def replace_image(self):
         try:
             site_info = SiteInfo.objects.get(id=self.id)
-            if site_info.logo.name != self.logo.name:
-                site_info.logo.delete(save=False)
+            if site_info.image.name != self.image.name:
+                site_info.image.delete(save=False)
             # site_info.logo.delete(save=False)
 
         except:
             pass
 
     def resize_image(self):
-        image_path = self.logo.path
+        image_path = self.image.path
         img = Image.open(image_path)
         max_size = 300
 
@@ -48,12 +48,6 @@ class SiteInfo(models.Model):
         return self.site_name
 
 
-def logo_cleanup(sender, instance, **kwargs):  # törli az adatokkal együtt a feltöltött fájlokat is, ez esetben a logo-t
-    os.remove(instance.logo.path)
-
-post_delete.connect(logo_cleanup, sender=SiteInfo)
-
-
 class About(models.Model):
     title = models.CharField('Címsor', max_length=200)
     content = models.TextField('Üzenet', max_length=5000)
@@ -67,14 +61,14 @@ class About(models.Model):
 
 class Services(models.Model):
     title = models.CharField('Cím', max_length=200)
-    photo = models.ImageField('Kép', upload_to='services')
+    image = models.ImageField('Kép', upload_to='services')
     content = models.TextField('Leírás', max_length=5000)
 
     def save(self, *args, **kwargs):
         # if photo is being replaces
         self.replace_image()
 
-        super(SiteInfo, self).save(*args, **kwargs)
+        super().save(*args, **kwargs)
 
         # resize uploded photo
         self.resize_image()
@@ -82,15 +76,15 @@ class Services(models.Model):
     def replace_image(self):
         try:
             service_object = Services.objects.get(id=self.id)
-            if service_object.photo.name != self.photo.name:
-                service_object.photo.delete(save=False)
+            if service_object.image.name != self.image.name:
+                service_object.image.delete(save=False)
             # site_info.logo.delete(save=False)
 
         except:
             pass
 
     def resize_image(self):
-        image_path = self.logo.path
+        image_path = self.image.path
         img = Image.open(image_path)
         max_size = 800
 
@@ -103,3 +97,11 @@ class Services(models.Model):
 
     def __str__(self):
         return self.title
+
+
+def image_cleanup(sender, instance, **kwargs):  # törli az adatokkal együtt a feltöltött fájlokat is, ez esetben a logo-t
+    os.remove(instance.image.path)
+
+
+post_delete.connect(image_cleanup, sender=SiteInfo)
+post_delete.connect(image_cleanup, sender=Services)
