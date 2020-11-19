@@ -2,6 +2,7 @@ from django.db import models
 from PIL import Image
 import os
 from django.db.models.signals import post_delete, pre_save, post_save
+from django.utils.text import slugify
 
 
 
@@ -23,7 +24,7 @@ class Photo(models.Model):
     description = models.TextField("Leírás", max_length=2000)
     uploaded = models.DateTimeField(auto_now_add=True)
 
-    slug = models.SlugField(max_length=200, blank=True)
+    slug = models.SlugField(max_length=200, blank=True, editable=False)
 
     class Meta:
         verbose_name_plural = "Fotók"
@@ -66,4 +67,12 @@ def image_cleanup(sender, instance, **kwargs):  # törli az adatokkal együtt a 
 
 
 post_delete.connect(image_cleanup, sender=Photo)
+
+
+def slug_generator(sender, instance, **kwargs):
+    if not instance.slug:
+        instance.slug = slugify(instance.title)
+
+
+pre_save.connect(slug_generator, sender=Photo)
 
