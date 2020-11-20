@@ -1,11 +1,22 @@
 
+<div class = "navbar">
 
+    <div class="nav_links">
 
+    <a href="{% url 'home' %}" class="navbutton">HOME</a>
+    <a href="{% url 'gallery_home' %}" class="navbutton">GALLERY</a>
+    <a href="{% url 'about' %}" class="navbutton">ABOUT</a>
+    <a href="{% url 'services' %}" class="navbutton">SERVICES</a>
+    <a href="{% url 'contact' %}" class="navbutton">CONTACT</a>
 
-    <div class = "navbar">
-        <a href="{% url 'home' %}" class="navbutton">HOME</a>
-        <a href="{% url 'gallery_home' %}" class="navbutton">GALLERY</a>
-        <a href="{% url 'about' %}" class="navbutton">ABOUT</a>
-        <a href="{% url 'services' %}" class="navbutton">SERVICES</a>
-        <a href="{% url 'contact' %}" class="navbutton">CONTACT</a>
     </div>
+
+    <div class="nav_links">
+
+        {% for category in categories %}
+            <a href="" class="navbutton category">{{ category.title }}</a>
+        {% endfor %}
+
+    </div>
+
+</div>
