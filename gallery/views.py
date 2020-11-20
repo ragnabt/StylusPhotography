@@ -10,8 +10,19 @@ class GalleryView(ListView):
 
     extra_context = {
         "categories": Category.objects.order_by("title")
-
     }
+
+    def get_queryset(self):
+        photos = Photo.objects.order_by('-uploaded')
+        category_name = self.request.GET.get("category")
+
+        if category_name:
+            photos = Photo.objects.filter(category__title=category_name)
+            photos = photos.order_by('-uploaded')
+
+        print(category_name)
+
+        return photos
 
 
 class PhotoDetailView(DetailView):

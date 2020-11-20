@@ -23,3 +23,8 @@
 .category{
     padding: 5px 5px;
 }
+
+.active{
+    background-color: #7A6A53;
+    color: white;
+}

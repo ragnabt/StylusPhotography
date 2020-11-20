@@ -3,18 +3,18 @@
 
     <div class="nav_links">
 
-    <a href="{% url 'home' %}" class="navbutton">HOME</a>
-    <a href="{% url 'gallery_home' %}" class="navbutton">GALLERY</a>
-    <a href="{% url 'about' %}" class="navbutton">ABOUT</a>
-    <a href="{% url 'services' %}" class="navbutton">SERVICES</a>
-    <a href="{% url 'contact' %}" class="navbutton">CONTACT</a>
+    <a href="{% url 'home' %}" class="navbutton {% if request.get_full_path == '/' %}active{% endif %}">HOME</a>
+    <a href="{% url 'gallery_home' %}" class="navbutton {% if '/gallery/' in request.path %}active{% endif %}">GALLERY</a>
+    <a href="{% url 'about' %}" class="navbutton {% if request.get_full_path == '/about/' %}active{% endif %}">ABOUT</a>
+    <a href="{% url 'services' %}" class="navbutton {% if request.get_full_path == '/services' %}active{% endif %}">SERVICES</a>
+    <a href="{% url 'contact' %}" class="navbutton {% if request.get_full_path == '/contact/' %}active{% endif %}">CONTACT</a>
 
     </div>
 
     <div class="nav_links">
 
         {% for category in categories %}
-            <a href="" class="navbutton category">{{ category.title }}</a>
+            <a href="{% url 'gallery_home' %}?category={{ category.title }}" class="navbutton category {% if request.GET.category == category.title %}active{% endif %}">{{ category.title }}</a>
         {% endfor %}
 
     </div>
