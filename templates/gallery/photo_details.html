@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+
+{% block title %} Photo Details {% endblock title %}
+
+{% block content %}
+
+
+    <h1>{{ photo.category }} / {{ photo.title }}</h1>
+    <img src="{{ photo.image.url }}" alt="">
+    <p>{{ photo.description }}</p>
+    <p>{{ photo.uploaded }}</p>
+
+
+
+{% endblock content %}
+

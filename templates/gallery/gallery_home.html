@@ -8,7 +8,7 @@
 
     <div class="thumbnail_layout">
         {% for photo in photos %}
-            <a href="" class="thumbnail_item" style="background-image: url({{ photo.image }})">
+            <a href="{% url 'gallery_home' %}{{ photo.slug }}/" class="thumbnail_item" style="background-image: url({{ photo.image.url }})">
 
                 <div class="thumbnail_content_layout">
 
@@ -18,7 +18,7 @@
                     </div>
 
 
-                    <div class="thumbnail_footer">{{ photo.creation_date }}</div>
+                    <div class="thumbnail_footer">{{ photo.uploaded }}</div>
 
                 </div>
 
