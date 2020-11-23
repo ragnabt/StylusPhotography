@@ -1,5 +1,7 @@
 @import "navbar.css";
 @import "gallery.css";
+@import "photo_details.css";
+@import "contact.css";
 
 body{
     background-color: #D5DED9;

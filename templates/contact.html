@@ -4,9 +4,18 @@
 
 {% block content %}
 
-    <h1>Contact</h1>
+    <div class="contact_container">
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, aperiam culpa ducimus ex fuga itaque molestias nesciunt nihil, officia pariatur quae rerum similique sit suscipit ullam? Cum dolor similique voluptates.</p>
+        <form method="post">
+            {% csrf_token %}
+            <h2>Kérjen ajánlatot!</h2>
+
+            {{ form }}
+
+
+            <button>Küldés</button>
+        </form>
+    </div>
 
 {% endblock content %}
 

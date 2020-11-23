@@ -1,0 +1,25 @@
+.details_layout{
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: auto 20em;
+}
+.detail_photo{
+    width: 100%;
+    border-radius: 1em;
+}
+.photo_description{
+    margin-left: 1em
+}
+.photo_description_layout{
+    display: flex;
+    flex-direction: column;
+}
+.photo_date{
+    align-self: flex-end;
+    font-size: 0.8em;
+    opacity: 0.8;
+}
+.photo_category{
+    font-size: 0.8em;
+    opacity: 0.8;
+}

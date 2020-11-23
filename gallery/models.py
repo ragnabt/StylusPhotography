@@ -63,7 +63,8 @@ class Photo(models.Model):
 
 
 def image_cleanup(sender, instance, **kwargs):  # törli az adatokkal együtt a feltöltött fájlokat is, ez esetben a logo-t
-    os.remove(instance.image.path)
+    if os.path.exists(instance.image.path):
+        os.remove(instance.image.path)
 
 
 post_delete.connect(image_cleanup, sender=Photo)

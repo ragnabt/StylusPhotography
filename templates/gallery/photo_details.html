@@ -4,12 +4,18 @@
 
 {% block content %}
 
+    <div class="details_layout">
+        <img src="{{ photo.image.url }}" alt="" class="detail_photo">
 
-    <h1>{{ photo.category }} / {{ photo.title }}</h1>
-    <img src="{{ photo.image.url }}" alt="">
-    <p>{{ photo.description }}</p>
-    <p>{{ photo.uploaded }}</p>
+        <div class="photo_description_layout">
+            <p class="photo_category">{{ photo.category }} /</p>
+            <h1>{{ photo.title }}</h1>
+            <p class="photo_description">{{ photo.description }}</p>
+            <br>
+            <p class="photo_date">{{ photo.uploaded }}</p>
+        </div>
 
+    </div>
 
 
 {% endblock content %}
