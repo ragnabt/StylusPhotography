@@ -25,7 +25,7 @@ SECRET_KEY = 'gu%@b@f9*1_2kt$+=(r=r0ge5wt2(4027m3oduto#w2r%i9_8v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [http://ragnabt.pythonanywhere.com/]
 
 
 # Application definition
