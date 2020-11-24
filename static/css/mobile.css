@@ -1,0 +1,34 @@
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+  h1 {
+      font-size: 4em;
+  }
+  .site_header_layout{
+      flex-direction: column;
+  }
+  .site_header_layout div{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  .contact_container{
+      margin 10px
+  }
+
+
+
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+  body {
+    background-color: #F5CF8E; /* Yellow */
+  }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+  body {
+    background-color: #B2D6FF; /* Blue */
+  }
+}
