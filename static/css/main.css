@@ -1,0 +1,70 @@
+@import "navbar.css";
+@import "gallery.css";
+@import "photo_details.css";
+@import "contact.css";
+
+body{
+    background-color: #D5DED9;
+    color: #7A6A53;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    margin: 0;
+}
+
+h1, h2, h3{
+    font-weight: 100;
+}
+
+h4{
+    font-weight: 300;
+}
+
+h1{
+    color: #f94085;
+}
+
+h3{
+    margin: 0px;
+    font-weight: 300;
+}
+
+a{
+    color: #7A6A53;
+    text-decoration: none;
+
+}
+a:hover {
+    color: white;
+}
+
+.site-logo{
+    color: #f94085;
+    font-size: 120px;
+    margin: 10px;
+}
+
+.site_header_layout{
+    display: flex;
+    align-items: center;
+}
+.site_footer_layout{
+    display: flex;
+    justify-content: center;
+    background-color: #b7bbb9;
+    color: #6a6c6b;
+}
+.site_footer_layout p{
+    margin: 10px;
+}
+.content_container{
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.center_page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
