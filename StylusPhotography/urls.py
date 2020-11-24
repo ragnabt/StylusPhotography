@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('pages.urls')),
     path('gallery/', include('gallery.urls')),
 
+
 ]
 
 if settings.DEBUG:
